@@ -1,5 +1,10 @@
+/* This design is mobile-first */
+
 /* font-family: 'Ubuntu', sans-serif;
 font-family: 'Victor Mono', monospace; */
+:root{
+    --pink: rgb(255, 0, 140);
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +13,107 @@ font-family: 'Victor Mono', monospace; */
 body{
     font-family: 'Ubuntu', sans-serif;
 }
-h1{
-    color: lightseagreen;
+a{
+    text-decoration: none;
+}
+
+header{
+    margin: 2rem 0;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.brand-logo{
+    width: 35px;
+}
+.brand-name span{
+    color: rgb(255, 115, 0);
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+nav a{
+    color: rgb(71, 71, 71);
+    font-size: small;
+}
+.nav-social-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+    font-size: small;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+}
+.nav-social-links img{
+    width: 20px;
+}
+
+/* Style for Tablets */
+@media screen and (max-width:768px) and (min-width:576px) {
+    header{
+        position: inherit;
+        display: flex;
+        margin: 0;
+        padding: 1rem 0;
+        height: 10vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    nav,nav ul{
+        flex-direction: row;
+    }
+    nav{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    }
+    nav ul{
+        margin: 0;
+    }
+}
+
+
+
+
+/* Style for Desktops */
+@media screen and (min-width:769px) {
+    header{
+        position: inherit;
+        display: flex;
+        margin: 0;
+        padding: 1rem 0;
+        height: 10vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    nav,nav ul{
+        flex-direction: row;
+    }
+    nav{
+        justify-content: space-between;
+        padding: 1rem 6rem;
+        width: 100%;
+    }
+    nav ul{
+        margin: 0;
+    }
+    nav a:hover{
+        transition: color ease-in-out 400ms ;
+        color:var(--pink);
+    }
 }
