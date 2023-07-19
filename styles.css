@@ -4,10 +4,11 @@
 font-family: 'Victor Mono', monospace; */
 :root{
     --pink: rgb(255, 0, 140);
-    --teal:rgb(0, 255, 191);
-    --sky:rgb(0, 183, 255);
-    --gray:rgb(48, 48, 48);
-    --light-gray:rgb(117, 117, 117);
+    --purple:rgb(174, 0, 255);
+    --lightgray:gray;
+    --darkgray:rgb(61, 61, 61);
+    --teal: rgb(0, 255, 242);
+    --sky:rgb(0, 195, 255);
 }
 *{
     box-sizing: border-box;
@@ -20,17 +21,7 @@ body{
 a{
     text-decoration: none;
 }
-button{
-    border-radius: 20px;
-    padding: 0.8rem 1.2rem;
-    font-size: smaller;
-    border: none;
-    color: white;
-}
-button:hover{
-    opacity: 60%;
-    transition: opacity ease-in-out 300ms;
-}
+
 header{
     margin: 2rem 0;
 }
@@ -39,6 +30,19 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+button{
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0.7rem 1rem;
+}
+button:hover{
+    transition: opacity 400ms ease-in-out;
+    opacity: 60%;
+}
+.main{
+    position: relative;
 }
 .brand{
     display: flex;
@@ -62,7 +66,7 @@ nav ul{
     margin: 3rem 0;
 }
 nav a{
-    color: var(--gray);
+    color: rgb(71, 71, 71);
     font-size: small;
 }
 .nav-social-links{
@@ -79,85 +83,68 @@ nav a{
     width: 20px;
 }
 .banner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 0 3rem;
+    display: grid;
+    padding: 2rem;
+    grid-template-rows: repeat(2,1fr);
 }
-.banner-img{
-    width: 100%;
+.banner a{
+    color:white;
 }
-.banner-contents{
-    width: 100%;
-    background: url('images/Group%2014.png');
-    background-size:cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    padding: 5rem 3rem;
-}
-.banner-contents ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.4rem;
-    margin-top: 1rem;
-    text-align: left;
-    font-size: smaller;
-}
-.banner-contents h2{
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    color: var(--gray);
-}
-.banner-contents h1 {
-    font-size: 3.3rem;
-    background: linear-gradient(to bottom, #b700ff, #ff0080);
+.banner h1 {
+    background: linear-gradient(to bottom,var(--purple),var(--pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}  
-.banner-contents img{
-    width: 18px;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+  
+.banner-img{
+    max-width:100%;
+    height: auto;
 }
-.banner-contents li{
+.banner-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:url('images/Group%2014.png');
+    background-size: contain;
+    padding: 5rem 2rem;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+.banner li{
     display: flex;
     align-items: center;
-    justify-content: start;
-    gap: 0.6rem;
+    gap: 0.4rem;
+    color: var(--lightgray);
     font-size: small;
-    color: var(--light-gray);
 }
-.banner-contents button:nth-child(1){
+.banner li img{
+    width: 14px;
+}
+.banner button:nth-child(1){
     background: var(--pink);
 }
-.banner-contents button:nth-child(2){
+.banner button:nth-child(2){
     background: var(--sky);
 }
-.banner-contents a{
-    color: white;
-}
-.banner-content-buttons{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
-    gap: 0.6rem;
-}
+
 /* Style for Tablets */
-@media screen and (max-width:768px) and (min-width:576px) {
+@media screen and (min-width:576px) {
     header{
         position: inherit;
         display: flex;
         margin: 0;
         padding: 1rem 0;
         height: 10vh;
-        width: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     nav,nav ul{
@@ -172,11 +159,19 @@ nav a{
         margin: 0;
     }
     .banner{
-        flex-direction: row-reverse;
-        margin: 0;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        max-height: 75vh;
+        background-size: cover;
+    }
+    .banner-contents{
+        order: 1;
     }
     .banner-img{
-        width: 50%;
+        order: 2;
+        max-width: 80%;
     }
 }
 
@@ -208,14 +203,8 @@ nav a{
         transition: color ease-in-out 400ms ;
         color:var(--pink);
     }
-    .banner{
-        flex-direction: row-reverse;
-        margin: 0;
-        padding: 0;
-        justify-content: space-between;
-    }
-    .banner-img{
-        width: 40%;
-        padding: 0 5rem;
+    .banner-contents{
+        height: 100%;
+        background-size: cover;
     }
 }
