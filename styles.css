@@ -144,7 +144,7 @@ nav a{
     grid-template-rows: repeat(2,1fr);
     align-items: center;
     justify-content: center;
-    background: rgb(255, 250, 252);
+    max-width: 1150px;
 }
 .intro-img{
     max-width: 100%;
@@ -316,10 +316,10 @@ nav a{
         max-width: 80%;
     }
     .intro{
-        margin: 3rem 0;
+        margin: 3rem auto;
         grid-template-columns: 5fr 4fr;
         grid-template-rows: none;
-        padding: 3rem 3rem;
+        padding: 5rem 3rem;
     }
     .intro-img{
         /* grid-column: span 3; */
