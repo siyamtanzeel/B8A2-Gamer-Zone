@@ -443,8 +443,20 @@ footer .brand h1{
     .social-icons,.footer-links{
         grid-template-columns: repeat(6,1fr);
     }
+    .footer-links a:hover{
+        transition: opacity ease-in-out 300ms;
+        opacity: 40%;
+    }
+    .social-icons a:hover{
+        transition: transform ease-in-out 300ms;
+        transform: translatey(-5px);
+    }
     .policy-links{
         grid-template-columns: repeat(4,1fr);
+    }
+    .policy-links a:hover{
+        transition: color ease-in-out 300ms;
+        color: white;
     }
 }
 
