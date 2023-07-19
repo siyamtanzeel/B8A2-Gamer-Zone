@@ -186,8 +186,8 @@ nav a{
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem 1.2rem;
-    margin-top: 3rem;
+    max-width: 1150px;
+    margin: 3rem auto 0 auto;
 }
 .videos-header p{
     font-size: small;
@@ -225,6 +225,7 @@ nav a{
 .video-caption{
     font-size: 0.7rem;
     margin: 1rem 0;
+    max-width: 80%;
 }
 .play{
     flex-direction: column;
@@ -239,6 +240,44 @@ nav a{
 .play-text{
     color: var(--pink);
 }
+.features,.featured-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.features{
+    max-width: 1150px;
+}
+.featured-content{
+    width: 70%;
+    font-size: small;
+    text-align: center;
+}
+.featured-details{
+    color: var(--lightgray);
+}
+.featured-images{
+    position: relative;
+    margin: 0 auto;
+    padding: 2rem 0.6rem;
+}
+.img-lg{
+    max-width: 60%;
+    height: auto;
+}
+.img-sm{
+    position: relative;
+    top: 2rem;
+    left: 3.5rem;
+    max-width: 30%;
+    height: auto;
+}
+
+
+
+
 /* Style for Tablets */
 @media screen and (min-width:576px) {
     header{
@@ -296,6 +335,20 @@ nav a{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    .features{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        max-width: 1150px;
+        margin: 0 auto;
+        
+    }
+    .featured-content{
+        margin: 0 auto;
+    }
+    .featured-details{
+        max-width: 70%;
+        line-height: 1.3;
+    }
 }
 
 
@@ -336,5 +389,8 @@ nav a{
     .videos-container{
         grid-template-columns: repeat(4,1fr);
         padding: 0 2rem;
+    }
+    .featured-content{
+        justify-self: right;
     }
 }
