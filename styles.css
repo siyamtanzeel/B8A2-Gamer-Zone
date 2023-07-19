@@ -180,6 +180,65 @@ nav a{
 .intro-contents summary h3{
     font-weight: 700;
 }
+.videos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 1.2rem;
+    margin-top: 3rem;
+}
+.videos-header p{
+    font-size: small;
+    color: var(--lightgray);
+    margin-top: 0.5rem;
+}
+.videos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.video-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.3rem 0;
+}
+.video-thumb{
+    position: relative;
+    z-index: 1;
+    max-width: 85%;
+    height: auto;
+}
+.video-content:hover  .play{
+    display: flex;
+    z-index: 2;
+}
+.video-content:hover .video-thumb{
+    filter: brightness(30%);
+    transition: filter ease-in-out 300ms;
+}
+.video-caption{
+    font-size: 0.7rem;
+    margin: 1rem 0;
+}
+.play{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: none;
+}
+.play-icon{
+    width: 50px;
+}
+.play-text{
+    color: var(--pink);
+}
 /* Style for Tablets */
 @media screen and (min-width:576px) {
     header{
@@ -220,6 +279,7 @@ nav a{
     .intro{
         margin: 3rem 0;
         grid-template-columns: 5fr 4fr;
+        grid-template-rows: none;
         padding: 3rem 3rem;
     }
     .intro-img{
@@ -231,6 +291,10 @@ nav a{
     }
     .intro-contents summary{
         align-items: end;
+    }
+    .videos-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -268,5 +332,9 @@ nav a{
     }
     .intro{
         grid-template-columns: 4fr 2fr;
+    }
+    .videos-container{
+        grid-template-columns: repeat(4,1fr);
+        padding: 0 2rem;
     }
 }
