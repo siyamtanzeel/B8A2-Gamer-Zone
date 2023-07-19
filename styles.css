@@ -9,6 +9,7 @@ font-family: 'Victor Mono', monospace; */
     --darkgray:rgb(61, 61, 61);
     --teal: rgb(0, 255, 242);
     --sky:rgb(0, 195, 255);
+    --orange:rgb(255, 115, 0);
 }
 *{
     box-sizing: border-box;
@@ -43,7 +44,7 @@ button:hover{
     opacity: 60%;
 }
 .gradient{
-    background: linear-gradient(to bottom,var(--purple),var(--pink));
+    background: linear-gradient(to bottom,var(--orange),var(--pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -60,7 +61,7 @@ button:hover{
     width: 35px;
 }
 .brand-name span{
-    color: rgb(255, 115, 0);
+    color: var(--orange);
 }
 nav ul{
     display: flex;
@@ -90,7 +91,6 @@ nav a{
 }
 .banner{
     display: grid;
-    padding: 2rem;
     grid-template-rows: repeat(2,1fr);
 }
 .banner a{
@@ -134,7 +134,7 @@ nav a{
     width: 14px;
 }
 .banner button:nth-child(1){
-    background: var(--pink);
+    background: var(--orange);
 }
 .banner button:nth-child(2){
     background: var(--sky);
@@ -160,7 +160,7 @@ nav a{
     text-align: center;
 }
 
-.intro-contents button{background:var(--pink);}
+.intro-contents button{background:var(--orange);}
 .intro-contents p{
     font-size: small;
     color: var(--lightgray);
@@ -231,6 +231,7 @@ nav a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     position: absolute;
     display: none;
 }
@@ -238,7 +239,7 @@ nav a{
     width: 50px;
 }
 .play-text{
-    color: var(--pink);
+    color: var(--orange);
 }
 .features,.featured-content{
     display: flex;
@@ -273,6 +274,50 @@ nav a{
     left: 3.5rem;
     max-width: 30%;
     height: auto;
+}
+.categories{
+    max-width: 1150px;
+    position: relative;
+    margin: 0 auto;
+}
+.categories ul{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+    row-gap: 6%;
+    column-gap: 4%;
+    list-style: none;
+    margin: 2rem auto;
+    padding: 3rem 1rem;
+}
+.categories li{
+    width: 100%;
+    position: relative;
+}
+.categories a{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 0.4rem;
+    font-size:small;
+    padding: 0.5rem 0.8rem;
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.categories a:hover{
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    transition: ease-in-out all 300ms;
+}
+.categories img{
+    width: 24px;
 }
 footer{
     background:rgb(0, 18, 29);
@@ -336,7 +381,8 @@ footer .brand h1{
     }
     .banner{
         grid-template-columns: 1fr 1fr;
-        padding: 0;
+        grid-template-rows: 1fr;
+        padding: 1 2rem;
         align-items: center;
         justify-content: center;
         max-height: 75vh;
@@ -344,6 +390,8 @@ footer .brand h1{
     }
     .banner-contents{
         order: 1;
+        align-items:center ;
+        text-align: center;
     }
     .banner-img{
         order: 2;
@@ -353,7 +401,7 @@ footer .brand h1{
         margin: 3rem auto;
         grid-template-columns: 5fr 4fr;
         grid-template-rows: none;
-        padding: 5rem 3rem;
+        padding: 1rem 2rem;
     }
     .intro-img{
         /* grid-column: span 3; */
@@ -382,6 +430,9 @@ footer .brand h1{
     .featured-details{
         max-width: 70%;
         line-height: 1.3;
+    }
+    .categories ul{
+        grid-template-columns: repeat(3,1fr);
     }
     footer{
         gap: 2rem;
@@ -420,7 +471,7 @@ footer .brand h1{
     }
     nav a:hover{
         transition: color ease-in-out 400ms ;
-        color:var(--pink);
+        color:var(--orange);
     }
     .banner-contents{
         height: 100%;
@@ -428,6 +479,7 @@ footer .brand h1{
     }
     .intro{
         grid-template-columns: 4fr 2fr;
+        padding: 5rem 3rem;
     }
     .videos-container{
         grid-template-columns: repeat(4,1fr);
@@ -435,5 +487,12 @@ footer .brand h1{
     }
     .featured-content{
         justify-self: right;
+    }
+    .categories ul{
+        grid-template-columns: repeat(5,1fr);
+        row-gap: 2rem;
+    }
+    .categories img{
+        width: 30px;
     }
 }
